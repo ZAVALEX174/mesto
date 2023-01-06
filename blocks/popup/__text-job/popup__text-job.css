@@ -1,0 +1,22 @@
+.popup__text-job {
+  padding-bottom: 14px;
+  padding-top: 30px;
+  display: block;
+  width: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000;
+  border: none;
+  border-bottom: 1px solid #000;
+}
+
+.popup__text-job:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 620px) {
+  .popup__text-job {
+    padding-bottom: 13px;
+  }
+}

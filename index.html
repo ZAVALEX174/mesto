@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <title>Место</title>
+  </head>
+  <body>
+    <div class="page">
+      <header class="haeder container">
+        <img src="./images/logo.svg" alt="Логотип сайта" class="logo" />
+      </header>
+      <main>
+        <section class="section profile container">
+          <div class="profile__user">
+            <img
+              src="./images/Avatar.jpg"
+              alt="Аватарка"
+              class="profile__image"
+            />
+            <div class="profile__wrapper">
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <div class="profile__button">
+                <button type="button" class="profile__btn-editing popup__open">
+                  <img
+                    src="./images/Edit-Button.svg"
+                    alt="Редактирование профиля"
+                    class="profile__btn-icon"
+                  />
+                </button>
+              </div>
+              <p class="profile__subtitle">Исследователь океана</p>
+            </div>
+          </div>
+          <div class="profile__button">
+            <button type="button" class="profile__btn">
+              <img
+                src="./images/Vector-plus.svg"
+                alt="Кнопка добавления фото"
+                class="profile__btn-foto"
+              />
+            </button>
+          </div>
+        </section>
+        <section class="section elements container">
+          <ul class="element">
+            <li class="element__card">
+              <img
+                src="./images/Mask-gora.jpg"
+                alt="Горы"
+                class="element__image"
+              />
+              <div class="element__content">
+                <h2 class="element__title">Карачаевск</h2>
+                <button class="element__icon">
+                  <img
+                    src="./images/Vector.png"
+                    alt="Лайк"
+                    class="element__btn-icon"
+                  />
+                </button>
+              </div>
+            </li>
+            <li class="element__card">
+              <img
+                src="./images/Mask-Group.jpg"
+                alt="Крепость"
+                class="element__image"
+              />
+              <div class="element__content">
+                <h2 class="element__title">Гора Эльбрус</h2>
+                <button class="element__icon">
+                  <img
+                    src="./images/Vector.png"
+                    alt="Лайк"
+                    class="element__btn-icon"
+                  />
+                </button>
+              </div>
+            </li>
+            <li class="element__card">
+              <img src="./images/Mask.jpg" alt="Закат" class="element__image" />
+              <div class="element__content">
+                <h2 class="element__title">Домбай</h2>
+                <button class="element__icon">
+                  <img
+                    src="./images/Vector.png"
+                    alt="Лайк"
+                    class="element__btn-icon"
+                  />
+                </button>
+              </div>
+            </li>
+            <li class="element__card">
+              <img
+                src="./images/Mask-Group.jpg"
+                alt="Крепость"
+                class="element__image"
+              />
+              <div class="element__content">
+                <h2 class="element__title">Гора Эльбрус</h2>
+                <button class="element__icon">
+                  <img
+                    src="./images/Vector.png"
+                    alt="Лайк"
+                    class="element__btn-icon"
+                  />
+                </button>
+              </div>
+            </li>
+            <li class="element__card">
+              <img src="./images/Mask.jpg" alt="Закат" class="element__image" />
+              <div class="element__content">
+                <h2 class="element__title">Домбай</h2>
+                <button class="element__icon">
+                  <img
+                    src="./images/Vector.png"
+                    alt="Лайк"
+                    class="element__btn-icon"
+                  />
+                </button>
+              </div>
+            </li>
+            <li class="element__card">
+              <img
+                src="./images/Mask-gora.jpg"
+                alt="Горы"
+                class="element__image"
+              />
+              <div class="element__content">
+                <h2 class="element__title">Карачаево-Черкессия</h2>
+                <button class="element__icon">
+                  <img
+                    src="./images/Vector.png"
+                    alt="Лайк"
+                    class="element__btn-icon"
+                  />
+                </button>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </main>
+      <footer class="footer container">
+        <p class="footer__copyright">&copy;2023 Mesto Russia</p>
+      </footer>
+      <div class="popup">
+        <div class="popup__container">
+          <div class="popup__body">
+            <p class="popup__text">Редактировать профиль</p>
+            <form action="#" class="popup__action">
+              <input
+                type="text"
+                placeholder="Имя"
+                class="popup__text-user"
+                value="Жак - Ив Кусто"
+              />
+              <input
+                type="text"
+                placeholder="О себе"
+                class="popup__text-job"
+                value="Исследователь океана"
+              />
+              <button type="submit" class="popup__save">Сохранить</button>
+            </form>
+            <div class="popup__close">&#10006;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./script/script.js"></script>
+  </body>
+</html>

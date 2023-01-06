@@ -1,0 +1,10 @@
+.profile__user {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 620px) {
+  .profile__user {
+    display: block;
+  }
+}

@@ -1,0 +1,22 @@
+.haeder {
+  margin: 0 auto;
+  padding: 0;
+  padding-top: 45px;
+  border-bottom: 1px solid #545454;
+  padding-bottom: 39px;
+}
+
+@media screen and (max-width: 899px) {
+  .haeder {
+    padding-top: 35px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 334px) {
+  .haeder {
+    padding: 28px 0 31px 26px;
+    max-width: 320px;
+  }
+}
