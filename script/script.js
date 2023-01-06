@@ -1,5 +1,5 @@
 "use stric";
-const openPopup = document.querySelector(".popup__open");
+const openPopup = document.querySelector(".profile__popup-open");
 const closePopup = document.querySelector(".popup__close");
 const popup = document.querySelector(".popup");
 
