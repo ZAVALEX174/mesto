@@ -1,32 +1,27 @@
 .popup__save {
-  margin-top: 48px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 37px;
+  margin-top: 44px;
   cursor: pointer;
   background-color: #000;
   color: #fff;
-  max-width: 358px;
+  width: 100%;
   min-height: 50px;
-  padding-left: 144px;
-  padding-right: 144px;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 22px;
-  text-align: center;
+  border: none;
   border-radius: 2px;
 }
 
 .popup__save:hover {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 620px) {
   .popup__save {
+    min-height: 48px;
     margin-top: 45px;
-    padding-left: 82px;
     padding-top: 14px;
     padding-bottom: 14px;
-    padding-right: 82px;
-    max-width: 238px;
-    font-size: 14px;
-    line-height: 17px;
+    margin-bottom: 20px;
   }
 }

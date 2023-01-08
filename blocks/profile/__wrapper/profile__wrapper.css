@@ -2,14 +2,13 @@
   margin: 0;
   padding: 0;
   display: flex;
-  max-width: 532px;
+  max-width: 400px;
   flex-wrap: wrap;
   align-items: center;
 }
 
 @media screen and (max-width: 620px) {
   .profile__wrapper {
-    display: flex;
     justify-content: center;
     max-width: 282px;
   }

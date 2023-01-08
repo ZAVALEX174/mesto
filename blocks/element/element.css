@@ -7,3 +7,11 @@
   grid-template-rows: repeat(2, 361px);
   gap: 20px 17px;
 }
+
+@media screen and (max-width: 620px) {
+  .element {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 19px;
+  }
+}

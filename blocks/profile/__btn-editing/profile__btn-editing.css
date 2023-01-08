@@ -1,9 +1,14 @@
 .profile__btn-editing {
   margin: 0;
-  padding: 0;
-  background-color: #0000;
+  padding: 0 10px 0 10px;
+  background: none;
+  /* border: none; */
+  max-width: 24px;
+  min-height: 24px;
+  background: url(../../../images/Vector-pen.svg) center no-repeat;
+
+  border: 1px solid #fff;
   cursor: pointer;
-  border: none;
 }
 
 .profile__btn-editing:hover {
@@ -12,6 +17,9 @@
 
 @media screen and (max-width: 620px) {
   .profile__btn-editing {
+    margin-top: 23px;
     padding: 10px 0 0 16px;
+    max-width: 18px;
+    min-height: 18px;
   }
 }

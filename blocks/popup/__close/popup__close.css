@@ -1,9 +1,17 @@
 .popup__close {
   cursor: pointer;
-  color: #fff;
+  background: none;
+  background: url(../../../images/Close-Icon.svg) center no-repeat;
+  border: none;
+  max-width: 32px;
+  min-height: 32px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   position: absolute;
-  top: -16px;
-  right: -16px;
+  top: -48px;
+  right: -48px;
 }
 
 .popup__close:hover {
@@ -12,7 +20,14 @@
 
 @media screen and (max-width: 620px) {
   .popup__close {
-    top: -24px;
+    top: -40px;
     right: 0;
+    max-width: 20px;
+    min-height: 20px;
+    width: 100%;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+    padding-bottom: 1px;
   }
 }
