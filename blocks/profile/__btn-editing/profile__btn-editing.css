@@ -1,10 +1,9 @@
 .profile__btn-editing {
   margin: 0;
   padding: 0 10px 0 10px;
-  background: none;
   max-width: 24px;
   min-height: 24px;
-  background-image: url(../../../images/Vector-pen.svg) center no-repeat;
+  background: url(../../../images/Vector-pen.svg) center no-repeat;
   border: 1px solid #fff;
   cursor: pointer;
 }
