@@ -11,6 +11,12 @@
   left: 33%;
 }
 
+@media screen and (max-width: 715px) {
+  .popup__body {
+    left: 20%;
+  }
+}
+
 @media screen and (max-width: 620px) {
   .popup__body {
     max-width: 282px;
