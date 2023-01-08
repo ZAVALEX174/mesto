@@ -4,7 +4,7 @@
   background: none;
   max-width: 24px;
   min-height: 24px;
-  background: url(../../../images/Vector-pen.svg) center no-repeat;
+  background-image: url(../../../images/Vector-pen.svg) center no-repeat;
   border: 1px solid #fff;
   cursor: pointer;
 }

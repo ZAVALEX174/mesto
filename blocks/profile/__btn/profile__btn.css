@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0 73px 0 73px;
   background: none;
-  background: url(../../../images/Vector-plus.svg) center no-repeat;
+  background-image: url(../../../images/Vector-plus.svg) center no-repeat;
   align-items: center;
   justify-content: center;
   border: 2px solid #fff;
