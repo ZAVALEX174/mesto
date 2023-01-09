@@ -1,19 +1,15 @@
-.profile__subtitle {
+.footer__copyright {
   margin: 0;
   padding: 0;
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+  color: #545454;
 }
 
 @media screen and (max-width: 620px) {
-  .profile__subtitle {
+  .footer__copyright {
     font-size: 14px;
     line-height: 17px;
-    text-align: center;
-    margin-bottom: 36px;
   }
 }
