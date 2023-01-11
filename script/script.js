@@ -9,14 +9,14 @@ let nameInputRec = document.querySelector(".profile__title");
 let jobInputRec = document.querySelector(".profile__subtitle");
 
 openPopup.addEventListener("click", function () {
-  popup.classList.add("popup_active");
+  popup.classList.add("popup_opened");
 
   nameInput.value = nameInputRec.textContent;
   jobInput.value = jobInputRec.textContent;
 });
 
 closePopup.addEventListener("click", function () {
-  popup.classList.remove("popup_active");
+  popup.classList.remove("popup_opened");
 });
 
 const savePopup = document.querySelector(".popup__action");
@@ -27,5 +27,5 @@ savePopup.addEventListener("submit", function (evt) {
   nameInputRec.textContent = nameInput.value;
   jobInputRec.textContent = jobInput.value;
 
-  popup.classList.remove("popup_active");
+  popup.classList.remove("popup_opened");
 });

@@ -115,7 +115,7 @@
               />
               <div class="element__content">
                 <h2 class="element__title">Карачаево-Черкессия</h2>
-                <button type="button" name="window-input" class="element__icon">
+                <button type="button" class="element__icon">
                   <img
                     src="./images/Vector.svg"
                     alt="Лайк"
@@ -131,9 +131,15 @@
         <p class="footer__copyright">&copy;2023 Mesto Russia</p>
       </footer>
       <div class="popup">
-        <div class="popup__body">
+        <div class="popup__container">
+          <button type="button" class="popup__close"></button>
           <h2 class="popup__text">Редактировать профиль</h2>
-          <form action="#" enctype="multipart/form-data" class="popup__action">
+          <form
+            action="#"
+            enctype="multipart/form-data"
+            name="window-input"
+            class="popup__action"
+          >
             <input
               type="text"
               placeholder="Имя"
@@ -148,7 +154,6 @@
             />
             <button type="submit" class="popup__save">Сохранить</button>
           </form>
-          <button type="button" class="popup__close"></button>
         </div>
       </div>
     </div>

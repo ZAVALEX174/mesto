@@ -9,8 +9,8 @@
   padding-top: 20px;
   padding-bottom: 20px;
   position: absolute;
-  top: -48px;
-  right: -48px;
+  top: 21%;
+  right: 30%;
 }
 
 .popup__close:hover {
@@ -19,8 +19,8 @@
 
 @media screen and (max-width: 620px) {
   .popup__close {
-    top: -40px;
-    right: 0;
+    top: 15%;
+    right: 6%;
     max-width: 20px;
     min-height: 20px;
     width: 100%;

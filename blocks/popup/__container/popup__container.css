@@ -1,18 +1,13 @@
-.popup__body {
+.popup__container {
   margin: 0 auto;
   max-width: 430px;
   border-radius: 10px;
   background-color: #fff;
   color: #000;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translate(0, -50%);
 }
 
 @media screen and (max-width: 620px) {
-  .popup__body {
+  .popup__container {
     max-width: 282px;
   }
 }
