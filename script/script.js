@@ -2,7 +2,7 @@
 
 const openPopup = document.querySelector(".profile__btn-editing");
 const closePopup = document.querySelector(".popup__close");
-const popup = document.querySelector(".popup");
+const profilePopup = document.querySelector(".profile-popup");
 
 const nameInput = document.querySelector(".popup__input_text_user");
 const jobInput = document.querySelector(".popup__input_text_job");
@@ -10,14 +10,14 @@ const nameInputRec = document.querySelector(".profile__title");
 const jobInputRec = document.querySelector(".profile__subtitle");
 
 openPopup.addEventListener("click", function () {
-  popup.classList.add("popup_opened");
+  profilePopup.classList.add("popup_opened");
 
   nameInput.value = nameInputRec.textContent;
   jobInput.value = jobInputRec.textContent;
 });
 
 closePopup.addEventListener("click", function () {
-  popup.classList.remove("popup_opened");
+  profilePopup.classList.remove("popup_opened");
 });
 
 const savePopup = document.querySelector(".popup__action");
@@ -28,7 +28,7 @@ savePopup.addEventListener("submit", function (evt) {
   nameInputRec.textContent = nameInput.value;
   jobInputRec.textContent = jobInput.value;
 
-  popup.classList.remove("popup_opened");
+  profilePopup.classList.remove("popup_opened");
 });
 
 const initialCards = [
