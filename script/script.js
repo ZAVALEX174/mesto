@@ -1,4 +1,5 @@
 "use strict";
+
 const openPopup = document.querySelector(".profile__btn-editing");
 const closePopup = document.querySelector(".popup__close");
 const popup = document.querySelector(".popup");
