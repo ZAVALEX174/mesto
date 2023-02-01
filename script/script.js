@@ -4,10 +4,10 @@ const openPopup = document.querySelector(".profile__btn-editing");
 const closePopup = document.querySelector(".popup__close");
 const popup = document.querySelector(".popup");
 
-let nameInput = document.querySelector(".popup__input_text_user");
-let jobInput = document.querySelector(".popup__input_text_job");
-let nameInputRec = document.querySelector(".profile__title");
-let jobInputRec = document.querySelector(".profile__subtitle");
+const nameInput = document.querySelector(".popup__input_text_user");
+const jobInput = document.querySelector(".popup__input_text_job");
+const nameInputRec = document.querySelector(".profile__title");
+const jobInputRec = document.querySelector(".profile__subtitle");
 
 openPopup.addEventListener("click", function () {
   popup.classList.add("popup_opened");
@@ -95,7 +95,7 @@ const createTask = (taskName) => {
     elementCard.remove();
   });
 
-  const buttonsLike = elementCard.querySelectorAll(".element__icon")[0];
+  const buttonsLike = elementCard.querySelector(".element__icon");
 
   buttonsLike.addEventListener("click", (likeButton) => {
     if (buttonsLike.classList.contains("element_active")) {
@@ -105,9 +105,9 @@ const createTask = (taskName) => {
     }
   });
 
-  const openPopupImage = elementCard.querySelectorAll(".element__image")[0];
+  const openPopupImage = elementCard.querySelector(".element__image");
   openPopupImage.addEventListener("click", () => {
-    const bigImagePopup = document.querySelectorAll(".popup_big")[0];
+    const bigImagePopup = document.querySelector(".popup_big");
 
     bigImagePopup.querySelector(".popup-title").textContent =
       elementCard.querySelector(".element__title").textContent;
@@ -138,7 +138,7 @@ initialCards.forEach((item) => {
   renderTask(item);
 });
 
-const formSubmitHander = (evt) => {
+const handleProfileFormSubmit = (evt) => {
   evt.preventDefault();
 
   const taskName = { name: inputTextImage.value, link: inputLinkImage.value };
@@ -151,4 +151,4 @@ const formSubmitHander = (evt) => {
   popupImg.classList.remove("popup_opened");
 };
 
-form.addEventListener("submit", formSubmitHander);
+form.addEventListener("submit", handleProfileFormSubmit);
