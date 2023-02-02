@@ -36,6 +36,7 @@
       <footer class="footer container">
         <p class="footer__copyright">&copy;2023 Mesto Russia</p>
       </footer>
+      
       <div class="popup profile-popup">
         <div class="popup__container">
           <h2 class="popup__text">Редактировать профиль</h2>
@@ -43,7 +44,7 @@
             action="#"
             enctype="multipart/form-data"
             name="window-input"
-            class="popup__action"
+            class="popup__action popup__action_profile"
           >
             <input
               type="text"
@@ -62,6 +63,7 @@
           <button type="button" class="popup__close"></button>
         </div>
       </div>
+
       <div class="popup popup_image">
         <div class="popup__container popup__container-image">
           <h2 class="popup__text popup__text_image">Новое место</h2>
@@ -93,6 +95,7 @@
           ></button>
         </div>
       </div>
+
       <div class="popup popup_big">
         <div class="popup__container popup__container_big">
           <img class="popup-img popup-img_big" src="#" alt="#" />
@@ -100,6 +103,7 @@
           <button type="button" class="popup__close popup__close_big"></button>
         </div>
       </div>
+
       <template id="element__card-template">
         <li class="element__card">
           <img src="#" alt="#" class="element__image" />
