@@ -18,7 +18,7 @@ closeButtons.forEach((button) => {
 
 openPopupButton.addEventListener("click", function () {
   nameInput.value = nameInputRec.textContent;
-  jobInput.value = jobInputRec.textContent;
+  jobInput.value = jobInputRec.text.bm.bmk.,Content;
 
   openPopup(profilePopup);
 });
