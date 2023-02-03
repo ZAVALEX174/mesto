@@ -1,31 +1,143 @@
 "use strict";
-const openPopup = document.querySelector(".profile__btn-editing");
-const closePopup = document.querySelector(".popup__close");
-const popup = document.querySelector(".popup");
 
-let nameInput = document.querySelector(".popup__input_text_user");
-let jobInput = document.querySelector(".popup__input_text_job");
-let nameInputRec = document.querySelector(".profile__title");
-let jobInputRec = document.querySelector(".profile__subtitle");
+const openPopupButton = document.querySelector(".profile__btn-editing");
+const profilePopup = document.querySelector(".profile-popup");
+const popupImg = document.querySelector(".popup_image");
+const PopupBig = document.querySelector(".popup_big");
+const savePopupProfileForm = document.querySelector(".popup__action_profile");
+const openPopupImgButton = document.querySelector(".profile__btn");
+const savePopupImgForm = document.querySelector(".popup__action_image");
+const element = document.querySelector(".element");
+const inputTextImage = document.querySelector(".popup__input_text_image-name");
+const inputLinkImage = document.querySelector(".popup__input_text_image-link");
+const template = document.querySelector("#element__card-template").content;
+const nameInput = document.querySelector(".popup__input_text_user");
+const jobInput = document.querySelector(".popup__input_text_job");
+const nameInputRec = document.querySelector(".profile__title");
+const jobInputRec = document.querySelector(".profile__subtitle");
+const closeButtons = document.querySelectorAll(".popup__close");
+const bigImagePopup = document.querySelector(".popup_big");
+const emergenceBigTitlePopup = document.querySelector(".popup-title");
+const emergenceBigImagePopup = document.querySelector(".popup-img_big");
 
-openPopup.addEventListener("click", function () {
+
+
+function closePopup(popup) {
+  popup.classList.remove("popup_opened");
+}
+
+function openPopup(popup) {
   popup.classList.add("popup_opened");
+}
 
+closeButtons.forEach((button) => {
+  const popup = button.closest(".popup");
+  button.addEventListener("click", () => closePopup(popup));
+});
+
+openPopupButton.addEventListener("click", function () {
   nameInput.value = nameInputRec.textContent;
   jobInput.value = jobInputRec.textContent;
+
+  openPopup(profilePopup);
 });
 
-closePopup.addEventListener("click", function () {
-  popup.classList.remove("popup_opened");
-});
-
-const savePopup = document.querySelector(".popup__action");
-
-savePopup.addEventListener("submit", function (evt) {
+savePopupProfileForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
 
   nameInputRec.textContent = nameInput.value;
   jobInputRec.textContent = jobInput.value;
 
-  popup.classList.remove("popup_opened");
+  closePopup(profilePopup);
+});
+
+const initialCards = [
+  {
+    name: "Архыз",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
+  },
+  {
+    name: "Челябинская область",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
+  },
+  {
+    name: "Иваново",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
+  },
+  {
+    name: "Камчатка",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
+  },
+  {
+    name: "Холмогорский район",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
+  },
+  {
+    name: "Байкал",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
+  },
+];
+
+openPopupImgButton.addEventListener("click", function () {
+  openPopup(popupImg);
+});
+
+const createTask = (taskName) => {
+  const elementCard = template.querySelector(".element__card").cloneNode(true);
+  elementCard.querySelector(".element__title").textContent = taskName.name;
+  elementCard.querySelector(".element__image").alt = taskName.name;
+  elementCard.querySelector(".element__image").src = taskName.link;
+
+  const deleteBtnElement = elementCard.querySelector(".element__delete");
+  deleteBtnElement.addEventListener("click", () => {
+    elementCard.remove();
+  });
+
+  const buttonsLike = elementCard.querySelector(".element__icon");
+
+  buttonsLike.addEventListener("click", (likeButton) => {
+    if (buttonsLike.classList.contains("element_active")) {
+      buttonsLike.classList.remove("element_active");
+    } else {
+      buttonsLike.classList.add("element_active");
+    }
+  });
+
+  const openPopupImage = elementCard.querySelector(".element__image");
+  openPopupImage.addEventListener("click", () => {
+
+
+    emergenceBigTitlePopup.textContent =
+      elementCard.querySelector(".element__title").textContent;
+
+      emergenceBigImagePopup.src =
+      elementCard.querySelector(".element__image").src;
+
+      emergenceBigImagePopup.alt =
+      elementCard.querySelector(".element__image").alt;
+
+    openPopup(bigImagePopup);
+  });
+
+  return elementCard;
+};
+
+const renderTask = (taskName) => {
+  element.prepend(createTask(taskName));
+};
+
+initialCards.forEach((item) => {
+  renderTask(item);
+});
+
+savePopupImgForm.addEventListener("submit", (evt) => {
+  evt.preventDefault();
+
+  const taskName = { name: inputTextImage.value, link: inputLinkImage.value };
+
+  renderTask(taskName);
+
+  savePopupImgForm.reset();
+
+  closePopup(popupImg);
 });

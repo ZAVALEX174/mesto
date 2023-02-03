@@ -8,6 +8,7 @@
     <title>Место</title>
   </head>
   <body>
+
     <div class="page">
       <header class="header container">
         <img src="./images/logo.svg" alt="Логотип сайта" class="logo" />
@@ -29,115 +30,21 @@
           <button type="button" class="profile__btn"></button>
         </section>
         <section class="section elements container">
-          <ul class="element">
-            <li class="element__card">
-              <img
-                src="./images/Mask-Group.jpg"
-                alt="Горы"
-                class="element__image"
-              />
-              <div class="element__content">
-                <h2 class="element__title">Карачаевск</h2>
-                <button type="button" class="element__icon">
-                  <img
-                    src="./images/Vector.svg"
-                    alt="Лайк"
-                    class="element__btn-icon"
-                  />
-                </button>
-              </div>
-            </li>
-            <li class="element__card">
-              <img
-                src="./images/Mask-gora.jpg"
-                alt="Крепость"
-                class="element__image"
-              />
-              <div class="element__content">
-                <h2 class="element__title">Гора Эльбрус</h2>
-                <button type="button" class="element__icon">
-                  <img
-                    src="./images/Vector.svg"
-                    alt="Лайк"
-                    class="element__btn-icon"
-                  />
-                </button>
-              </div>
-            </li>
-            <li class="element__card">
-              <img src="./images/Mask.jpg" alt="Закат" class="element__image" />
-              <div class="element__content">
-                <h2 class="element__title">Домбай</h2>
-                <button type="button" class="element__icon">
-                  <img
-                    src="./images/Vector.svg"
-                    alt="Лайк"
-                    class="element__btn-icon"
-                  />
-                </button>
-              </div>
-            </li>
-            <li class="element__card">
-              <img
-                src="./images/Mask-Group.jpg"
-                alt="Крепость"
-                class="element__image"
-              />
-              <div class="element__content">
-                <h2 class="element__title">Гора Эльбрус</h2>
-                <button type="button" class="element__icon">
-                  <img
-                    src="./images/Vector.svg"
-                    alt="Лайк"
-                    class="element__btn-icon"
-                  />
-                </button>
-              </div>
-            </li>
-            <li class="element__card">
-              <img src="./images/Mask.jpg" alt="Закат" class="element__image" />
-              <div class="element__content">
-                <h2 class="element__title">Домбай</h2>
-                <button type="button" class="element__icon">
-                  <img
-                    src="./images/Vector.svg"
-                    alt="Лайк"
-                    class="element__btn-icon"
-                  />
-                </button>
-              </div>
-            </li>
-            <li class="element__card">
-              <img
-                src="./images/Mask-gora.jpg"
-                alt="Горы"
-                class="element__image"
-              />
-              <div class="element__content">
-                <h2 class="element__title">Карачаево-Черкессия</h2>
-                <button type="button" class="element__icon">
-                  <img
-                    src="./images/Vector.svg"
-                    alt="Лайк"
-                    class="element__btn-icon"
-                  />
-                </button>
-              </div>
-            </li>
-          </ul>
+          <ul class="element"></ul>
         </section>
       </main>
       <footer class="footer container">
         <p class="footer__copyright">&copy;2023 Mesto Russia</p>
       </footer>
-      <div class="popup">
+      
+      <div class="popup profile-popup">
         <div class="popup__container">
           <h2 class="popup__text">Редактировать профиль</h2>
           <form
             action="#"
             enctype="multipart/form-data"
             name="window-input"
-            class="popup__action"
+            class="popup__action popup__action_profile"
           >
             <input
               type="text"
@@ -156,6 +63,57 @@
           <button type="button" class="popup__close"></button>
         </div>
       </div>
+
+      <div class="popup popup_image">
+        <div class="popup__container popup__container-image">
+          <h2 class="popup__text popup__text_image">Новое место</h2>
+          <form
+            action="#"
+            enctype="multipart/form-data"
+            name="window-input"
+            class="popup__action popup__action_image"
+          >
+            <input
+              type="text"
+              placeholder="Название"
+              name="title"
+              class="popup__input popup__input_text_image-name"
+            />
+            <input
+              type="text"
+              placeholder="Ссылка на картинку"
+              name="subtitle"
+              class="popup__input popup__input_text_image-link"
+            />
+            <button type="submit" class="popup__save popup__save_image">
+              Сохранить
+            </button>
+          </form>
+          <button
+            type="button"
+            class="popup__close popup__close_image"
+          ></button>
+        </div>
+      </div>
+
+      <div class="popup popup_big">
+        <div class="popup__container popup__container_big">
+          <img class="popup-img popup-img_big" src="#" alt="#" />
+          <h2 class="popup-title"></h2>
+          <button type="button" class="popup__close popup__close_big"></button>
+        </div>
+      </div>
+
+      <template id="element__card-template">
+        <li class="element__card">
+          <img src="#" alt="#" class="element__image" />
+          <button type="button" class="element__delete"></button>
+          <div class="element__content">
+            <h2 class="element__title"></h2>
+            <button type="button" class="element__icon"></button>
+          </div>
+        </li>
+      </template>
     </div>
     <script src="./script/script.js"></script>
   </body>

@@ -5,6 +5,12 @@
   background: none;
   border: none;
   cursor: pointer;
+  background-image: url(../../../images/Vector.svg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 22px;
+  height: 19px;
 }
 
 .element__icon:hover {
