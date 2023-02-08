@@ -20,14 +20,29 @@ const bigImagePopup = document.querySelector(".popup_big");
 const emergenceBigTitlePopup = document.querySelector(".popup-title");
 const emergenceBigImagePopup = document.querySelector(".popup-img_big");
 
-
-
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
+  document.removeEventListener("keydown", closePopupEsc);
+}
+
+function closePopupclickingDarkArea(popup) {
+  popup.addEventListener("mousedown", (event) => {
+    if (event.target.classList.contains("popup_opened")) {
+      closePopup(popup);
+    }
+  });
+}
+
+function closePopupEsc(evt) {
+  const popupOpened = document.querySelector(".popup_opened");
+  if (evt.key === "Escape") {
+    closePopup(popupOpened);
+  }
 }
 
 function openPopup(popup) {
   popup.classList.add("popup_opened");
+  document.addEventListener("keydown", closePopupEsc);
 }
 
 closeButtons.forEach((button) => {
@@ -40,6 +55,7 @@ openPopupButton.addEventListener("click", function () {
   jobInput.value = jobInputRec.textContent;
 
   openPopup(profilePopup);
+  closePopupclickingDarkArea(profilePopup);
 });
 
 savePopupProfileForm.addEventListener("submit", function (evt) {
@@ -80,6 +96,7 @@ const initialCards = [
 
 openPopupImgButton.addEventListener("click", function () {
   openPopup(popupImg);
+  closePopupclickingDarkArea(popupImg);
 });
 
 const createTask = (taskName) => {
@@ -105,18 +122,17 @@ const createTask = (taskName) => {
 
   const openPopupImage = elementCard.querySelector(".element__image");
   openPopupImage.addEventListener("click", () => {
-
-
     emergenceBigTitlePopup.textContent =
       elementCard.querySelector(".element__title").textContent;
 
-      emergenceBigImagePopup.src =
+    emergenceBigImagePopup.src =
       elementCard.querySelector(".element__image").src;
 
-      emergenceBigImagePopup.alt =
+    emergenceBigImagePopup.alt =
       elementCard.querySelector(".element__image").alt;
 
     openPopup(bigImagePopup);
+    closePopupclickingDarkArea(bigImagePopup);
   });
 
   return elementCard;
