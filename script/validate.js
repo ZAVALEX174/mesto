@@ -51,6 +51,7 @@ function toggleButton(form, config) {
 
   buttonSubmit.disabled = !isFormValid;
   buttonSubmit.classList.toggle("popup__button_disabled", !isFormValid);
+
 }
 
 function addInputListeners(form, config) {

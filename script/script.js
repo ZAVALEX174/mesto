@@ -157,3 +157,4 @@ savePopupImgForm.addEventListener("submit", (evt) => {
 
   closePopup(popupImg);
 });
+
