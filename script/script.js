@@ -43,7 +43,7 @@ function closePopupEsc(evt) {
 function openPopup(popup) {
   popup.classList.add("popup_opened");
   document.addEventListener("keydown", closePopupEsc);
-  closePopupclickingDarkArea(popup); /**/
+  closePopupclickingDarkArea(popup);
 }
 
 closeButtons.forEach((button) => {

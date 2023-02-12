@@ -11,7 +11,6 @@ const validationConfig = {
 
 function disableSubmit(evt) {
   evt.preventDefault();
-  // evt.target.reset(); не сработало
 }
 
 function enableValidation(config) {
@@ -36,14 +35,6 @@ function handleFormInput(evt, config) {
   const input = evt.target;
   const inputId = input.id;
   const errorElementVisible = document.querySelector(`#${inputId}-error`);
-
-  // if (input.validity.valid) {
-  //   input.classList.remove(config.inputErrorClass);
-  //   errorElementVisible.textContent = "";
-  // } else {
-  //   input.classList.add(config.inputErrorClass);
-  //   errorElementVisible.textContent = input.validationMessage;
-  // }
 
   function hideInputError(input) {
     input.classList.remove(config.inputErrorClass);
