@@ -1,6 +1,6 @@
 "use strict";
 
-const enableValidationConfig = {
+const validationConfig = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
   submitButtonSelector: ".popup__button",
@@ -11,6 +11,7 @@ const enableValidationConfig = {
 
 function disableSubmit(evt) {
   evt.preventDefault();
+  // evt.target.reset(); не сработало
 }
 
 function enableValidation(config) {
@@ -36,11 +37,27 @@ function handleFormInput(evt, config) {
   const inputId = input.id;
   const errorElementVisible = document.querySelector(`#${inputId}-error`);
 
-  if (input.validity.valid) {
+  // if (input.validity.valid) {
+  //   input.classList.remove(config.inputErrorClass);
+  //   errorElementVisible.textContent = "";
+  // } else {
+  //   input.classList.add(config.inputErrorClass);
+  //   errorElementVisible.textContent = input.validationMessage;
+  // }
+
+  function hideInputError(input) {
     input.classList.remove(config.inputErrorClass);
+  }
+
+  function showInputError(input) {
+    input.classList.add(config.inputErrorClass);
+  }
+
+  if (input.validity.valid) {
+    hideInputError(input);
     errorElementVisible.textContent = "";
   } else {
-    input.classList.add(config.inputErrorClass);
+    showInputError(input);
     errorElementVisible.textContent = input.validationMessage;
   }
 }
@@ -51,7 +68,6 @@ function toggleButton(form, config) {
 
   buttonSubmit.disabled = !isFormValid;
   buttonSubmit.classList.toggle("popup__button_disabled", !isFormValid);
-
 }
 
 function addInputListeners(form, config) {
@@ -64,4 +80,4 @@ function addInputListeners(form, config) {
   });
 }
 
-enableValidation(enableValidationConfig);
+enableValidation(validationConfig);

@@ -34,8 +34,8 @@ function closePopupclickingDarkArea(popup) {
 }
 
 function closePopupEsc(evt) {
-  const popupOpened = document.querySelector(".popup_opened");
   if (evt.key === "Escape") {
+    const popupOpened = document.querySelector(".popup_opened");
     closePopup(popupOpened);
   }
 }
@@ -43,6 +43,7 @@ function closePopupEsc(evt) {
 function openPopup(popup) {
   popup.classList.add("popup_opened");
   document.addEventListener("keydown", closePopupEsc);
+  closePopupclickingDarkArea(popup); /**/
 }
 
 closeButtons.forEach((button) => {
@@ -55,7 +56,6 @@ openPopupButton.addEventListener("click", function () {
   jobInput.value = jobInputRec.textContent;
 
   openPopup(profilePopup);
-  closePopupclickingDarkArea(profilePopup);
 });
 
 savePopupProfileForm.addEventListener("submit", function (evt) {
@@ -96,14 +96,15 @@ const initialCards = [
 
 openPopupImgButton.addEventListener("click", function () {
   openPopup(popupImg);
-  closePopupclickingDarkArea(popupImg);
 });
 
 const createTask = (taskName) => {
   const elementCard = template.querySelector(".element__card").cloneNode(true);
   elementCard.querySelector(".element__title").textContent = taskName.name;
-  elementCard.querySelector(".element__image").alt = taskName.name;
-  elementCard.querySelector(".element__image").src = taskName.link;
+
+  const elementCardImage = elementCard.querySelector(".element__image");
+  elementCardImage.alt = taskName.name;
+  elementCardImage.src = taskName.link;
 
   const deleteBtnElement = elementCard.querySelector(".element__delete");
   deleteBtnElement.addEventListener("click", () => {
@@ -121,6 +122,7 @@ const createTask = (taskName) => {
   });
 
   const openPopupImage = elementCard.querySelector(".element__image");
+
   openPopupImage.addEventListener("click", () => {
     emergenceBigTitlePopup.textContent =
       elementCard.querySelector(".element__title").textContent;
@@ -132,7 +134,6 @@ const createTask = (taskName) => {
       elementCard.querySelector(".element__image").alt;
 
     openPopup(bigImagePopup);
-    closePopupclickingDarkArea(bigImagePopup);
   });
 
   return elementCard;
@@ -156,5 +157,6 @@ savePopupImgForm.addEventListener("submit", (evt) => {
   savePopupImgForm.reset();
 
   closePopup(popupImg);
-});
 
+  toggleButton(savePopupImgForm, validationConfig);
+});
