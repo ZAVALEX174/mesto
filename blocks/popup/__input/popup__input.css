@@ -3,7 +3,6 @@
   padding: 0;
   margin-left: 36px;
   padding-bottom: 11px;
-  padding-top: 30px;
   display: block;
   width: 100%;
   max-width: 358px;
@@ -17,10 +16,6 @@
 
 .popup__input:focus {
   outline: none;
-}
-
-.popup__input:first-child {
-  padding-top: 0;
 }
 
 @media screen and (max-width: 620px) {
