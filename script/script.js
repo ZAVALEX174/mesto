@@ -20,17 +20,23 @@ const bigImagePopup = document.querySelector(".popup_big");
 const emergenceBigTitlePopup = document.querySelector(".popup-title");
 const emergenceBigImagePopup = document.querySelector(".popup-img_big");
 
+function openPopup(popup) {
+  popup.classList.add("popup_opened");
+  document.addEventListener("keydown", closePopupEsc);
+  document.addEventListener("mousedown", closePopupclickingDarkArea);
+}
+
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
   document.removeEventListener("keydown", closePopupEsc);
+  document.removeEventListener("mousedown", closePopupclickingDarkArea);
 }
 
 function closePopupclickingDarkArea(popup) {
-  popup.addEventListener("mousedown", (event) => {
-    if (event.target.classList.contains("popup_opened")) {
-      closePopup(popup);
-    }
-  });
+  if (popup.target.classList.contains("popup_opened")) {
+    const popupOpened = document.querySelector(".popup_opened");
+    closePopup(popupOpened);
+  }
 }
 
 function closePopupEsc(evt) {
@@ -38,12 +44,6 @@ function closePopupEsc(evt) {
     const popupOpened = document.querySelector(".popup_opened");
     closePopup(popupOpened);
   }
-}
-
-function openPopup(popup) {
-  popup.classList.add("popup_opened");
-  document.addEventListener("keydown", closePopupEsc);
-  closePopupclickingDarkArea(popup);
 }
 
 closeButtons.forEach((button) => {
