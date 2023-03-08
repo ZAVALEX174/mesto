@@ -9,7 +9,7 @@ const PopupBig = document.querySelector(".popup_big");
 const savePopupProfileForm = document.querySelector(".popup__action_profile");
 const openPopupImgButton = document.querySelector(".profile__btn");
 const savePopupImgForm = document.querySelector(".popup__action_image");
-const element = document.querySelector(".element");
+const cardSection = document.querySelector(".element");//из ревью
 const inputTextImage = document.querySelector(".popup__input_text_image-name");
 const inputLinkImage = document.querySelector(".popup__input_text_image-link");
 const template = document.querySelector("#element__card-template").content;
@@ -25,19 +25,19 @@ const emergenceBigImagePopup = document.querySelector(".popup-img_big");
 function openPopup(popup) {
   popup.classList.add("popup_opened");
   document.addEventListener("keydown", closePopupEsc);
-  document.addEventListener("mousedown", closePopupclickingDarkArea);
+  document.addEventListener("mousedown", closePopupClickingDarkArea);//из ревью
 }
 
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
   document.removeEventListener("keydown", closePopupEsc);
-  document.removeEventListener("mousedown", closePopupclickingDarkArea);
+  document.removeEventListener("mousedown", closePopupClickingDarkArea);//из ревью
 }
 
-function closePopupclickingDarkArea(popup) {
-  if (popup.target.classList.contains("popup_opened")) {
-    const popupOpened = document.querySelector(".popup_opened");
-    closePopup(popupOpened);
+function closePopupClickingDarkArea(evt) {//из ревью
+  if (evt.target.classList.contains("popup_opened")) {//из ревью
+    //const popupOpened = document.querySelector(".popup_opened");//из ревью
+    closePopup(evt.target);//из ревью
   }
 }
 

@@ -21,8 +21,14 @@ export default class FormValidator {
       this._toggleButton();
     });
 
+    // this._form.addEventListener("reset", () => {//из ревью
+    //   this._toggleButton();//из ревью
+    // });//из ревью
     this._form.addEventListener("reset", () => {
-      this._toggleButton();
+      // `setTimeout` нужен для того, чтобы дождаться очищения формы (вызов уйдет в конце стэка) и только потом вызвать `toggleButtonState`
+      setTimeout(() => {
+        this._toggleButton();
+      }, 0); // достаточно указать 0 миллисекунд, чтобы после `reset` уже сработало действие
     });
   }
 
