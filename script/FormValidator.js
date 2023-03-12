@@ -2,6 +2,12 @@ export default class FormValidator {
   constructor(config, form) {
     this._config = config;
     this._form = form;
+    this._buttonSubmit = this._form.querySelector(
+      this._config.submitButtonSelector
+    );
+    this._inputList = Array.from(
+      this._form.querySelectorAll(this._config.inputSelector)
+    );
   }
 
   enableValidation() {
@@ -20,15 +26,10 @@ export default class FormValidator {
     this._form.addEventListener("input", () => {
       this._toggleButton();
     });
-
-    // this._form.addEventListener("reset", () => {//из ревью
-    //   this._toggleButton();//из ревью
-    // });//из ревью
     this._form.addEventListener("reset", () => {
-      // `setTimeout` нужен для того, чтобы дождаться очищения формы (вызов уйдет в конце стэка) и только потом вызвать `toggleButtonState`
       setTimeout(() => {
         this._toggleButton();
-      }, 0); // достаточно указать 0 миллисекунд, чтобы после `reset` уже сработало действие
+      }, 0);
     });
   }
 
@@ -55,24 +56,19 @@ export default class FormValidator {
   }
 
   _toggleButton() {
-    const buttonSubmit = this._form.querySelector(
-      this._config.submitButtonSelector
-    );
     const isFormValid = this._form.checkValidity();
 
-    buttonSubmit.disabled = !isFormValid;
-    buttonSubmit.classList.toggle("popup__button_disabled", !isFormValid);
+    this._buttonSubmit.disabled = !isFormValid;
+    this._buttonSubmit.classList.toggle(
+      this._config.inactiveButtonClass,
+      !isFormValid
+    );
   }
 
   _addInputListeners() {
-    const inputList = Array.from(
-      this._form.querySelectorAll(this._config.inputSelector)
-    );
-    const _this = this; // Это нужно т.к. inputList.forEach меняет контекст this на item, в _this содержится ссылка на this
-
-    inputList.forEach(function (item) {
+    this._inputList.forEach((item) => {
       item.addEventListener("input", (evt) => {
-        _this._handleFormInput(evt);
+        this._handleFormInput(evt);
       });
     });
   }

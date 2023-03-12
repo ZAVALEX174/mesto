@@ -8,10 +8,11 @@ import {
 } from "./index.js";
 
 export default class Card {
-  constructor(data, selector) {
+  constructor(data, selector, handleCardClick) {
     this._name = data.name;
     this._link = data.link;
     this._selector = selector;
+    this._handleCardClick = handleCardClick;
   }
 
   _getElement() {
@@ -25,7 +26,10 @@ export default class Card {
 
   generate() {
     this._element = this._getElement();
-    this._element.querySelector(".element__image").src = this._link;
+
+    this._cardImage = this._element.querySelector(".element__image");
+    this._cardImage.src = this._link;
+    this._cardImage.alt = this._name;
     this._element.querySelector(".element__title").textContent = this._name;
 
     this._setEventListeners();
@@ -59,18 +63,17 @@ export default class Card {
 
   _setEventOpenPopupBigImageClick() {
     this._element
-      .querySelector(".element__image")
-      .addEventListener("click", () => {
-        emergenceBigTitlePopup.textContent =
-          this._element.querySelector(".element__title").textContent;
 
-        emergenceBigImagePopup.src =
-          this._element.querySelector(".element__image").src;
+    .querySelector(".element__image")
 
-        emergenceBigImagePopup.alt =
-          this._element.querySelector(".element__image").alt;
+    .addEventListener("click", () => {
 
-        openPopup(bigImagePopup); 
-      });
+      emergenceBigTitlePopup.textContent = this._name;
+      emergenceBigImagePopup.src = this._link;
+      emergenceBigImagePopup.alt = this._name;
+
+      openPopup(bigImagePopup);
+
+    });
   }
 }
