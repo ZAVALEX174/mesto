@@ -32,6 +32,8 @@ export default class Card {
     this._cardImage.alt = this._name;
     this._element.querySelector(".element__title").textContent = this._name;
 
+    this._likeButton = this._element.querySelector(".element__icon");
+
     this._setEventListeners();
 
     return this._element;
@@ -44,11 +46,9 @@ export default class Card {
   }
 
   _setEventLikeButtonClick() {
-    this._element
-      .querySelector(".element__icon")
+    this._likeButton
       .addEventListener("click", () => {
-        this._element
-          .querySelector(".element__icon")
+        this._likeButton
           .classList.toggle("element_active");
       });
   }
@@ -62,10 +62,7 @@ export default class Card {
   }
 
   _setEventOpenPopupBigImageClick() {
-    this._element
-
-    .querySelector(".element__image")
-
+    this._cardImage
     .addEventListener("click", () => {
 
       emergenceBigTitlePopup.textContent = this._name;
