@@ -22,16 +22,13 @@ const bigImagePopup = document.querySelector(".popup_big");
 const emergenceBigTitlePopup = document.querySelector(".popup-title");
 const emergenceBigImagePopup = document.querySelector(".popup-img_big");
 
-//из ревью
-//function handleCardClick(name, link) {
-//устанавливаем ссылку
-//emergenceBigTitlePopup.textContent = name;
-//emergenceBigImagePopup.src = link;
-//устанавливаем подпись картинке
+function handleCardClick(name, link) {
+  emergenceBigTitlePopup.textContent = name;
+  emergenceBigImagePopup.src = link;
+  emergenceBigImagePopup.alt = name;
 
-//открываем попап универсальной функцией, которая навешивает обработчик Escape внутри себя
-//openPopup(popup);
-//}
+  openPopup(bigImagePopup);
+}
 
 function openPopup(popup) {
   popup.classList.add("popup_opened");
@@ -85,7 +82,7 @@ openPopupImgButton.addEventListener("click", function () {
 
 function createCard(item) {
   // тут создаете карточку и возвращаете ее
-  const сard = new Card(item, "#element__card-template");
+  const сard = new Card(item, "#element__card-template", handleCardClick);
   const cardElement = сard.generate();
   return cardElement;
 }

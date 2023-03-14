@@ -1,11 +1,12 @@
 "use strict";
-
+/*
 import {
   openPopup,
   emergenceBigImagePopup,
   emergenceBigTitlePopup,
   bigImagePopup,
 } from "./index.js";
+*/
 
 export default class Card {
   constructor(data, selector, handleCardClick) {
@@ -42,15 +43,17 @@ export default class Card {
   _setEventListeners() {
     this._setEventLikeButtonClick();
     this._deleteButtonClick();
-    this._setEventOpenPopupBigImageClick();
+    //this._setEventOpenPopupBigImageClick();
+
+    this._cardImage.addEventListener("click", () => {
+      this._handleCardClick(this._name, this._link);
+    });
   }
 
   _setEventLikeButtonClick() {
-    this._likeButton
-      .addEventListener("click", () => {
-        this._likeButton
-          .classList.toggle("element_active");
-      });
+    this._likeButton.addEventListener("click", () => {
+      this._likeButton.classList.toggle("element_active");
+    });
   }
 
   _deleteButtonClick() {
@@ -61,16 +64,16 @@ export default class Card {
       });
   }
 
+  /*
+  Это удали, оно больше не нужно, т.к. handleCardClick используется
   _setEventOpenPopupBigImageClick() {
-    this._cardImage
-    .addEventListener("click", () => {
-
+    this._cardImage.addEventListener("click", () => {
       emergenceBigTitlePopup.textContent = this._name;
       emergenceBigImagePopup.src = this._link;
       emergenceBigImagePopup.alt = this._name;
 
       openPopup(bigImagePopup);
-
     });
   }
+  */
 }
