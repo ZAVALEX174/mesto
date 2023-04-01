@@ -21,6 +21,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        use:"babel-loader",
+        exclude: "/node_modules/"
+      },
+      {
         test: /\.(png|svg|jpg|jpeg|gif)$/,
         type: "asset/resource",
         generator: {
@@ -39,8 +44,12 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           {
-            loader: "css-loader"
-          }
+            loader: "css-loader",
+            options: {
+              importLosders: 1,
+            }
+          },
+          "postcss-loader"
         ],
       }
     ],

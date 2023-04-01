@@ -1,0 +1,1179 @@
+/*!****************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/vendor/normalize.css ***!
+  \****************************************************************************/
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}
+
+/*!******************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/vendor/fonts/fonts.css ***!
+  \******************************************************************************/
+@font-face {
+  font-family: "Inter";
+  src: url(fonts/Inter-Black.15ca31c0a2a68f76d2d1.woff2) format("woff2"),
+    url(fonts/Inter-Black.c6938660eec019fefd68.woff) format("woff"),
+    url(fonts/Inter-Black.b2a2b192860f79c0b89c.otf) format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url(fonts/Inter-Medium.8a50feca5194fae5cc45.woff2) format("woff2"),
+    url(fonts/Inter-Medium.1be9909267c3576629ab.woff) format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url(fonts/Inter-Regular.c8ba52b05a9ef10f4758.woff2) format("woff2"),
+    url(fonts/Inter-Regular.8c206db99195777c6769.woff) format("woff"),
+    url(fonts/Inter-Regular.a416f4674fad5f019461.otf) format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*!****************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/page/page.css ***!
+  \****************************************************************************/
+.page {
+  margin: 0 auto;
+  font-family: "Inter", sans-serif;
+  background-color: #000;
+  color: #fff;
+  box-sizing: border-box;
+  min-height: 100%;
+}
+
+/*!**************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/container/container.css ***!
+  \**************************************************************************************/
+.container {
+  margin: 0 auto;
+  max-width: 880px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@media screen and (max-width: 899px) {
+  .container {
+    max-width: 581px;
+    padding-left: 19px;
+    padding-right: 19px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .container {
+    max-width: 282px;
+  }
+}
+
+/*!**********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/section/section.css ***!
+  \**********************************************************************************/
+.section {
+  margin: 0 auto;
+}
+
+/*!********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/header/header.css ***!
+  \********************************************************************************/
+.header {
+  margin: 0 auto;
+  padding: 0;
+  padding-top: 45px;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  padding-bottom: 39px;
+}
+
+@media screen and (max-width: 899px) {
+  .header {
+    padding-top: 35px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 334px) {
+  .header {
+    padding: 28px 0 27px 27px;
+    max-width: 320px;
+  }
+}
+
+/*!****************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/logo/logo.css ***!
+  \****************************************************************************/
+.logo {
+  margin: 0;
+  padding: 0;
+  max-width: 142px;
+}
+
+@media screen and (max-width: 620px) {
+  .logo {
+    max-width: 104px;
+  }
+}
+
+/*!**********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/profile/profile.css ***!
+  \**********************************************************************************/
+.profile {
+  margin: 0 auto;
+  padding: 40px 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 620px) {
+  .profile {
+    flex-direction: column;
+    max-width: 282px;
+    padding: 42px 19px 0 19px;
+    align-items: stretch;
+  }
+}
+
+/*!***********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/profile/__user/profile__user.css ***!
+  \***********************************************************************************************/
+.profile__user {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 899px) {
+  .profile__user {
+    margin: 20px 0;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .profile__user {
+    display: block;
+  }
+}
+
+/*!*************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/profile/__image/profile__image.css ***!
+  \*************************************************************************************************/
+.profile__image {
+  display: block;
+  border-radius: 50%;
+  margin-right: 30px;
+  width: 120px;
+  height: 120px;
+}
+
+@media screen and (max-width: 620px) {
+  .profile__image {
+    margin: 0 auto;
+  }
+}
+
+/*!*************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/profile/__btn-editing/profile__btn-editing.css ***!
+  \*************************************************************************************************************/
+.profile__btn-editing {
+  margin: 0;
+  padding: 0 10px 0 10px;
+  max-width: 24px;
+  min-height: 24px;
+  background: url(images/Vector-pen.8667ac4a523e8fc42e59.svg) center no-repeat;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.profile__btn-editing:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 899px) {
+  .profile__btn-editing {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .profile__btn-editing {
+    margin-bottom: 0;
+    margin-top: 23px;
+    padding: 10px 0 0 16px;
+    max-width: 18px;
+    min-height: 18px;
+  }
+}
+
+/*!*********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/profile/__btn/profile__btn.css ***!
+  \*********************************************************************************************/
+.profile__btn {
+  margin: 0;
+  padding: 0 73px 0 73px;
+  background: url(images/Vector-plus.54b1426515811a15ebaf.svg) center no-repeat;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  max-width: 150px;
+  min-height: 50px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.profile__btn:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 620px) {
+  .profile__btn {
+    padding: 0 132px 0 132px;
+    max-width: 282px;
+  }
+}
+
+/*!*************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/profile/__title/profile__title.css ***!
+  \*************************************************************************************************/
+.profile__title {
+  margin: 0;
+  max-width: 350px;
+  margin-right: 18px;
+  margin-bottom: 10px;
+  padding: 0;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 48px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 899px) {
+  .profile__title {
+    max-width: 200px;
+    font-size: 27px;
+    line-height: 33px;
+    text-align: center;
+    margin-right: 12px;
+    margin-bottom: 14px;
+    padding-top: 5px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .profile__title {
+    margin: 0 auto;
+    margin-right: 10px;
+    margin-bottom: 4px;
+    padding-top: 26px;
+    padding-left: 20px;
+    margin-left: 2px;
+  }
+}
+
+/*!*******************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/profile/__subtitle/profile__subtitle.css ***!
+  \*******************************************************************************************************/
+.profile__subtitle {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 620px) {
+  .profile__subtitle {
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    margin-bottom: 36px;
+  }
+}
+
+/*!*****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/profile/__wrapper/profile__wrapper.css ***!
+  \*****************************************************************************************************/
+.profile__wrapper {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  max-width: 390px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+@media screen and (max-width: 899px) {
+  .profile__wrapper {
+    max-width: 282px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .profile__wrapper {
+    justify-content: center;
+  }
+}
+
+/*!**********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/element/element.css ***!
+  \**********************************************************************************/
+.element {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 282px);
+  grid-template-rows: repeat(2, 361px);
+  gap: 20px 17px;
+}
+
+@media screen and (max-width: 620px) {
+  .element {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 19px;
+  }
+}
+
+/*!***********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/element/__card/element__card.css ***!
+  \***********************************************************************************************/
+.element__card {
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 10px;
+  position: relative;
+}
+
+/*!************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/element/__image/element__imag.css ***!
+  \************************************************************************************************/
+.element__image {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 282px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/*!*************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/element/__title/element__title.css ***!
+  \*************************************************************************************************/
+.element__title {
+  margin: 0;
+  padding: 0;
+  max-width: 186px;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  background-color: #fff;
+  color: #000000;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/*!************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/elements/elements.css ***!
+  \************************************************************************************/
+.elements {
+  margin: 0 auto;
+  padding: 50px 2px 2px 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 899px) {
+  .elements {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .elements {
+    padding: 36px 2px 2px;
+  }
+}
+
+/*!*******************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/element/__btn-icon/element__btn-icon.css ***!
+  \*******************************************************************************************************/
+.element__btn-icon {
+  background: none;
+}
+
+/*!***********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/element/__icon/element__icon.css ***!
+  \***********************************************************************************************/
+.element__icon {
+  margin: 0;
+  padding: 0;
+  padding-top: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  background-image: url(images/Vector.87ed371465c7a6a1cd01.svg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 22px;
+  height: 19px;
+}
+
+.element__icon:hover {
+  opacity: 0.5;
+}
+
+/*!*************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/element/_active/element_active.css ***!
+  \*************************************************************************************************/
+.element_active {
+  background-image: url(images/Union.e787eeb70bb65b7b453a.svg);
+}
+
+/*!*****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/element/__content/element__content.css ***!
+  \*****************************************************************************************************/
+.element__content {
+  margin: 0 auto;
+  padding: 0;
+  padding: 24px 19px 26px 19px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 246px;
+  align-items: center;
+}
+
+/*!***************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/element/__delete/element__delete.css ***!
+  \***************************************************************************************************/
+.element__delete {
+  margin: 0;
+  padding: 0;
+  background: none;
+  background-image: url(images/Trash.cbc09a894bdd4c956365.svg);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 25px;
+  right: 21px;
+  width: 18px;
+  height: 19px;
+}
+
+.element__delete:hover {
+  opacity: 0.6;
+}
+
+/*!***********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/element/__btn-delete/element__btn-delete.css ***!
+  \***********************************************************************************************************/
+.element__btn-delete {
+  display: block;
+  background: none;
+  width: 100%;
+  height: 100%;
+}
+
+/*!********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/footer/footer.css ***!
+  \********************************************************************************/
+.footer {
+  margin: 0 auto;
+  padding: 66px 0 60px 0;
+}
+
+@media screen and (max-width: 899px) {
+  .footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .footer {
+    padding: 29px 19px 34px 19px;
+  }
+}
+
+/*!*******************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/footer/__copyright/footer__copyright.css ***!
+  \*******************************************************************************************************/
+.footer__copyright {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #545454;
+}
+
+@media screen and (max-width: 620px) {
+  .footer__copyright {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+/*!******************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/popup/popup.css ***!
+  \******************************************************************************/
+.popup {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease 0s;
+}
+
+/*!*****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/popup/__container/popup__container.css ***!
+  \*****************************************************************************************************/
+.popup__container {
+  margin: 0 auto;
+  max-width: 430px;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #000;
+  position: relative;
+}
+
+@media screen and (max-width: 620px) {
+  .popup__container {
+    max-width: 282px;
+  }
+}
+
+/*!*********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/popup/__close/popup__close.css ***!
+  \*********************************************************************************************/
+.popup__close {
+  cursor: pointer;
+  background: url(images/Close-Icon.2ceb783afbab75916ddc.svg) center no-repeat;
+  border: none;
+  max-width: 32px;
+  min-height: 32px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: absolute;
+  top: -45px;
+  right: -44px;
+}
+
+.popup__close:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 620px) {
+  .popup__close {
+    top: -39px;
+    right: 0;
+    max-width: 20px;
+    min-height: 20px;
+    width: 100%;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
+}
+
+/*!*******************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/popup/__save/popup__save.css ***!
+  \*******************************************************************************************/
+.popup__save {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 37px;
+  margin-top: 44px;
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  min-height: 50px;
+  border: none;
+  border-radius: 2px;
+  padding: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  max-width: 358px;
+}
+
+.popup__save:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 620px) {
+  .popup__save {
+    min-height: 48px;
+    margin-top: 45px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 17px;
+    max-width: 238px;
+  }
+}
+
+/*!*******************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/popup/__text/popup__text.css ***!
+  \*******************************************************************************************/
+.popup__text {
+  margin: 0;
+  padding: 0;
+  max-width: 430px;
+  margin-right: 87px;
+  padding-bottom: 48px;
+  padding-left: 36px;
+  padding-right: 0px;
+  padding-top: 34px;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+}
+
+@media screen and (max-width: 620px) {
+  .popup__text {
+    max-width: 282px;
+    padding-left: 22px;
+    padding-top: 25px;
+    padding-bottom: 71px;
+    margin-right: 30px;
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+/*!*********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/popup/__input/popup__input.css ***!
+  \*********************************************************************************************/
+.popup__input {
+  margin: 0;
+  padding: 0;
+  margin-left: 36px;
+  padding-bottom: 11px;
+  display: block;
+  width: 100%;
+  max-width: 358px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.popup__input:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 620px) {
+  .popup__input {
+    margin-left: 22px;
+    max-width: 238px;
+    margin-right: 22px;
+  }
+}
+
+/*!*********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/popup/_opened/popup_opened.css ***!
+  \*********************************************************************************************/
+.popup_opened {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+}
+
+/*!*************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/popup/__text/_text_image/popup__text_image.css ***!
+  \*************************************************************************************************************/
+.popup__text_image {
+  margin-right: 126px;
+  padding-right: 110px;
+}
+
+@media screen and (max-width: 620px) {
+  .popup__text_image {
+    margin-right: 32px;
+    padding-right: 109px;
+  }
+}
+
+/*!**************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/popup/__container/_big/popup__container_big.css ***!
+  \**************************************************************************************************************/
+.popup__container_big {
+  margin: 0 auto;
+  max-width: 75vw;
+  height: 75vh;
+  background-color: #fff;
+  color: #000;
+  position: relative;
+}
+
+@media screen and (max-width: 620px) {
+  .popup__container_big {
+    margin-top: 130px;
+    margin-bottom: 130px;
+    max-width: 240px;
+    height: 299px;
+  }
+}
+
+/*!*******************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/popup/_big/popup-img_big.css ***!
+  \*******************************************************************************************/
+.popup-img_big {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+
+/*!************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/popup/popup-title/popup-title.css ***!
+  \************************************************************************************************/
+.popup-title {
+  margin: 0;
+  padding: 7px 0 0 0;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #fff;
+}
+
+/*!**********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/popup/popup_big.css ***!
+  \**********************************************************************************/
+.popup_big{
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+
+/*!******************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/popup/_visible/popup__error_visible.css ***!
+  \******************************************************************************************************/
+.popup__error_visible {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ff0000;
+  width: 358px;
+  min-height: 30px;
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  margin-left: 36px;
+}
+
+@media screen and (max-width: 620px) {
+  .popup__error_visible {
+    margin-left: 22px;
+    max-width: 238px;
+    margin-right: 22px;
+  }
+}
+
+/*!*********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/popup/_disabled/popup__button_disabled.css ***!
+  \*********************************************************************************************************/
+.popup__button_disabled {
+  background: #e5e5e5;
+}
+
+/*!********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/blocks/popup/__input/_type_error/popup__input_type_error.css ***!
+  \********************************************************************************************************************/
+.popup__input_type_error {
+  border-color: red;
+}
+
+/*!***********************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/pages/index.css ***!
+  \***********************************************************************/
+
+
