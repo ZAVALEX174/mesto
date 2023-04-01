@@ -32,9 +32,11 @@
           <ul class="element"></ul>
         </section>
       </main>
+
       <footer class="footer container">
         <p class="footer__copyright">&copy;2023 Mesto Russia</p>
       </footer>
+
       <div class="popup profile-popup">
         <div class="popup__container">
           <h2 class="popup__text">Редактировать профиль</h2>
@@ -49,7 +51,7 @@
               id="input-name"
               type="text"
               placeholder="Имя"
-              name="title"
+              name="name"
               class="popup__input popup__input_text_user"
               required
               minlength="2"
@@ -63,7 +65,7 @@
               id="input-job"
               type="text"
               placeholder="О себе"
-              name="subtitle"
+              name="job"
               class="popup__input popup__input_text_job"
               required
               minlength="2"
@@ -80,6 +82,7 @@
           <button type="button" class="popup__close"></button>
         </div>
       </div>
+
       <div class="popup popup_image">
         <div class="popup__container popup__container-image">
           <h2 class="popup__text popup__text_image">Новое место</h2>
@@ -94,7 +97,7 @@
               id="input-title"
               type="text"
               placeholder="Название"
-              name="title"
+              name="name"
               class="popup__input popup__input_text_image-name"
               required
               minlength="2"
@@ -108,7 +111,7 @@
               id="input-link"
               type="url"
               placeholder="Ссылка на картинку"
-              name="subtitle"
+              name="link"
               class="popup__input popup__input_text_image-link"
               required
             />
@@ -129,6 +132,7 @@
           ></button>
         </div>
       </div>
+
       <div class="popup popup_big">
         <div class="popup__container popup__container_big">
           <img class="popup-img popup-img_big" src="#" alt="#" />
@@ -136,6 +140,7 @@
           <button type="button" class="popup__close popup__close_big"></button>
         </div>
       </div>
+
       <template id="element__card-template" class="element__card-template">
         <li class="element__card">
           <img src="#" alt="#" class="element__image" />
@@ -146,10 +151,16 @@
           </div>
         </li>
       </template>
+
     </div>
-    <script src="./script/constants.js" type="module"></script>
-    <script src="./script/index.js" type="module"></script>
-    <script src="./script/Card.js" type="module"></script>
-    <script src="./script/FormValidator.js" type="module"></script>
+    <script src="./utils/constants.js" type="module"></script>
+    <script src="./pages/index.js" type="module"></script>
+    <script src="./components/Card.js" type="module"></script>
+    <script src="./components/FormValidator.js" type="module"></script>
+    <script src="./components/Section.js" type="module"></script>
+    <script src="./components/UserInfo.js" type="module"></script>
+    <script src="./components/Popup.js" type="module"></script>
+    <script src="./components/PopupWithImage.js" type="module"></script>
+    <script src="./components/PopupWithForm.js" type="module"></script>
   </body>
 </html>
