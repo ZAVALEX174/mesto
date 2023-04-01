@@ -6,6 +6,8 @@ import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
 import FormValidator from "../components/FormValidator.js";
 
+import "../pages/index.css";
+
 // Добавление карточек из массива
 function handleCardClick(name, link) {
   const popupImage = new PopupWithImage('.popup_big');
