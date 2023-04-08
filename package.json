@@ -7,7 +7,7 @@
     "build": "webpack",
     "dev": "webpack serve",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "author": "Zuev Alexandr",
   "license": "ISC",
