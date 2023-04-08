@@ -13,14 +13,21 @@
         <img src="<%=require("./images/logo.svg")%>" alt="Логотип сайта"
         class="logo" />
       </header>
-      <main>
+      main>
         <section class="section profile container">
           <div class="profile__user">
-            <img
-              src="<%=require("./images/image.jpg")%>"
-              alt="Аватарка"
-              class="profile__image"
-            />
+            <div class="profile__avatar-wrapper">
+              <img
+                src="<%=require("./images/image.jpg")%>"
+                alt="Аватарка"
+                class="profile__image"
+              />
+              <img
+                class="profile__avatar-pen"
+                src="<%=require("./images/pen.svg")%>"
+                alt="Карандаш"
+              />
+            </div>
             <div class="profile__wrapper">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
               <button type="button" class="profile__btn-editing"></button>
@@ -66,7 +73,7 @@
               id="input-job"
               type="text"
               placeholder="О себе"
-              name="job"
+              name="about"
               class="popup__input popup__input_text_job"
               required
               minlength="2"
@@ -124,13 +131,50 @@
               type="submit"
               class="popup__button popup__save popup__save_image"
             >
-              Сохранить
+              Создать
             </button>
           </form>
           <button
             type="button"
             class="popup__close popup__close_image"
           ></button>
+        </div>
+      </div>
+
+      <!--аватар-->
+      <div class="popup popup_avatar-form">
+        <div class="popup__container">
+          <h2 class="popup__text">Обновить аватар</h2>
+          <form class="popup__form" name="edit-form-avatar" novalidate>
+            <input
+              class="popup__input popup__info_avatar"
+              id="link-avatar"
+              name="avatar"
+              placeholder="Ссылка на картинку"
+              required
+              type="url"
+              value=""
+            />
+            <span class="popup__error" id="link-avatar-error"></span>
+            <button class="popup__button popup__save" type="submit">
+              Сохранить
+            </button>
+          </form>
+          <button
+              class="popup__close popup__close-new-card"
+              type="button"
+          ></button>
+        </div>
+      </div>
+
+      <!--удалить карточку-->
+      <div class="popup popup_confirm">
+        <div class="popup__container">
+          <button class="popup__close" type="button"></button>
+          <h2 class="popup__text">Вы уверены?</h2>
+          <form class="popup__form" novalidate>
+            <button class="popup__button" type="submit" value="Да">Да</button>
+          </form>
         </div>
       </div>
 
@@ -148,7 +192,10 @@
           <button type="button" class="element__delete"></button>
           <div class="element__content">
             <h2 class="element__title"></h2>
-            <button type="button" class="element__icon"></button>
+            <div class="element__group">
+              <button type="button" class="element__icon"></button>
+              <span class="element__count-likes">0</span>
+            </div>
           </div>
         </li>
       </template>

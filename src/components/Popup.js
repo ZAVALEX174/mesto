@@ -3,7 +3,6 @@ export default class Popup {
     this._popup = document.querySelector(popupSelector);
     this._escKey = "Escape";
     this._handleEscClose = this._handleEscClose.bind(this);
-    
   }
 
   open() {
@@ -25,6 +24,7 @@ export default class Popup {
     }
   }
 
+
   //добавляет слушатель клика иконке закрытия попапа
   setEventListeners() {
     //слушатель на клик мышки
@@ -37,6 +37,5 @@ export default class Popup {
         this.close();
       }
     });
-
   }
 }
