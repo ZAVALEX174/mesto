@@ -17,21 +17,14 @@
         <section class="section profile container">
           <div class="profile__user">
             <div class="profile__avatar-wrapper">
-              <img
-                src="<%=require("./images/image.jpg")%>"
-                alt="Аватарка"
-                class="profile__image"
-              />
-              <img
-                class="profile__avatar-pen"
-                src="<%=require("./images/pen.svg")%>"
-                alt="Карандаш"
-              />
+              <img src="#" alt="Аватарка" class="profile__image" /> <img
+              class="profile__avatar-pen" src="<%=require("./images/pen.svg")%>"
+              alt="Карандаш" />
             </div>
             <div class="profile__wrapper">
-              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <h1 class="profile__title"></h1>
               <button type="button" class="profile__btn-editing"></button>
-              <p class="profile__subtitle">Исследователь океана</p>
+              <p class="profile__subtitle"></p>
             </div>
           </div>
           <button type="button" class="profile__btn"></button>
@@ -93,7 +86,7 @@
 
       <div class="popup popup_image">
         <div class="popup__container popup__container-image">
-          <h2 class="popup__text popup__text_image">Новое место</h2>
+          <h2 class="popup__text">Новое место</h2>
           <form
             action="#"
             enctype="multipart/form-data"
@@ -147,7 +140,7 @@
           <h2 class="popup__text">Обновить аватар</h2>
           <form class="popup__form" name="edit-form-avatar" novalidate>
             <input
-              class="popup__input popup__info_avatar"
+              class="popup__input popup__info popup__info_avatar"
               id="link-avatar"
               name="avatar"
               placeholder="Ссылка на картинку"
@@ -155,14 +148,17 @@
               type="url"
               value=""
             />
-            <span class="popup__error" id="link-avatar-error"></span>
+            <span
+              class="popup__error popup__error_visible"
+              id="link-avatar-error"
+            ></span>
             <button class="popup__button popup__save" type="submit">
               Сохранить
             </button>
           </form>
           <button
-              class="popup__close popup__close-new-card"
-              type="button"
+            class="popup__close popup__close-new-card"
+            type="button"
           ></button>
         </div>
       </div>
@@ -173,7 +169,9 @@
           <button class="popup__close" type="button"></button>
           <h2 class="popup__text">Вы уверены?</h2>
           <form class="popup__form" novalidate>
-            <button class="popup__button" type="submit" value="Да">Да</button>
+            <button class="popup__button popup__save" type="submit" value="Да">
+              Да
+            </button>
           </form>
         </div>
       </div>

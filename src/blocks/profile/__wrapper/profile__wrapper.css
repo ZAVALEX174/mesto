@@ -1,6 +1,6 @@
 .profile__wrapper {
   margin: 0;
-  padding: 0;
+  padding: 0 0 0 30px;
   display: flex;
   max-width: 390px;
   flex-wrap: wrap;
