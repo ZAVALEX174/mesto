@@ -16,11 +16,12 @@ export default class Card {
     this._name = data.name;
     this._link = data.link;
     this._ownerId = data.owner._id;
-    this._likes = data.likes;
     this._selector = selector;
     this._handleCardClick = handleCardClick;
     this._handleLikeClick = handleLikeClick;
     this._handleRemoveCardClick = handleRemoveCardClick;
+
+    this.setLikeList(data.likes);
   }
 
 // получаем элемент
@@ -49,7 +50,7 @@ export default class Card {
       this._deleteButton.remove();
     }
 
-    this._setLike();
+    this.like();
     this._setEventListeners();
 
     return this._element;
@@ -63,7 +64,11 @@ export default class Card {
     return this._id;
   }
 
-  _setLike() {
+  setLikeList(likes) {
+    this._likes = likes;
+  }
+
+  like() {
     this._isLiked = false;
     this._likes.forEach((likeUser) => {
       if (likeUser._id == this._userId) {
@@ -81,6 +86,10 @@ export default class Card {
     this._likeCount.textContent = this._likes.length;
   }
 
+  isLiked() {
+    return this._isLiked;
+  }
+
   // устанавливаем слушатели
   _setEventListeners() {
     this._setEventLikeButtonClick();
@@ -96,14 +105,7 @@ export default class Card {
 
   _setEventLikeButtonClick() {
     this._likeButton.addEventListener("click", () => {
-      this._handleLikeClick(this._id, this._isLiked)
-          .then((card) => {
-            this._likes = card.likes;
-            this._setLike();
-          })
-          .catch((msg) => {
-            console.log(`Ошибка ${msg}`)
-          });
+      this._handleLikeClick(this);
     });
   }
 

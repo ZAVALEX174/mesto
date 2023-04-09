@@ -120,6 +120,78 @@ formList.forEach((form) => {
   formValidator.enableValidation();
 });
 
+// Всплывающая картинка
+const popupImage = new PopupWithImage(".popup_big");
+popupImage.setEventListeners();
+
+let arCurrentUserProfile; // Текущий пользователь
+const cardList = new Section((item) => {
+  const cardElement = createCard(item);
+  cardList.addItem(cardElement);
+}, ".element");
+function createCard(item) {
+  const card = new Card(
+    arCurrentUserProfile._id,
+    item,
+    "#element__card-template",
+    {
+      handleCardClick: (name, link) => {
+        popupImage.open(name, link);
+      },
+      handleRemoveCardClick: (card) => {
+        popupConfirmation.open(card);
+      },
+      handleLikeClick: (card) => {
+        const cardId = card.getId();
+        const isLiked = card.isLiked();
+        let result;
+
+        if (isLiked) {
+          result = api.removeLikeCard(cardId);
+        } else {
+          result = api.likeCard(cardId);
+        }
+
+        result.then((cardResult) => {
+          card.setLikeList(cardResult.likes);
+          card.like();
+        });
+      },
+    }
+  );
+
+  return card.generate();
+}
+
+// Форма добавления карточки:
+function handleSubmitFormAddCard(evt) {
+  evt.preventDefault();
+
+  popupFormAddCard.showLoading();
+  const addNewCard = api.addCard(popupFormAddCard.formValues);
+  addNewCard
+    .then((card) => {
+      const cardElement = createCard(card);
+      cardList.addItem(cardElement);
+      popupFormAddCard.close();
+    })
+    .catch((err) => {
+      console.log(`Ошибка сервера ${err}`);
+    })
+    .finally(() => {
+      popupFormAddCard.hideLoading();
+    });
+}
+const popupFormAddCard = new PopupWithForm(
+  ".popup_image",
+  handleSubmitFormAddCard
+);
+popupFormAddCard.setEventListeners();
+const buttonOpenPopupWithImage = document.querySelector(".profile__btn");
+buttonOpenPopupWithImage.addEventListener("click", () => {
+  popupFormAddCard.open();
+});
+
 // Получаем первоначальную информацию
 const getUserInfo = api.getUserInfo();
 const getInitialCards = api.getInitialCards();
@@ -134,71 +206,9 @@ getInitialCards.catch((msg) => {
 const promiseAll = Promise.all([getUserInfo, getInitialCards]);
 promiseAll.then(([arUserInfo, initialCards]) => {
   // Устанавливаем имя, полученное с сервера
-  userInfo.setUserInfo(arUserInfo);
+  arCurrentUserProfile = arUserInfo;
+  userInfo.setUserInfo(arCurrentUserProfile);
 
-  // Всплывающая картинка
-  const popupImage = new PopupWithImage(".popup_big");
-  popupImage.setEventListeners();
-
-  // Выводим полученные с сервера карточки
-  function createCard(item) {
-    const card = new Card(arUserInfo._id, item, "#element__card-template", {
-      handleCardClick: (name, link) => {
-        popupImage.open(name, link);
-      },
-      handleRemoveCardClick: (card) => {
-        popupConfirmation.open(card);
-      },
-      handleLikeClick: (cardId, isLiked) => {
-        if (isLiked) {
-          return api.removeLikeCard(cardId);
-        } else {
-          return api.likeCard(cardId);
-        }
-      },
-    });
-    const cardElement = card.generate();
-    return cardElement;
-  }
-
-  const cardList = new Section(
-    {
-      items: initialCards,
-      renderer: (item) => {
-        const cardElement = createCard(item);
-        cardList.addItem(cardElement);
-      },
-    },
-    ".element"
-  );
-  cardList.renderItems();
-
-  // Форма добавления карточки:
-  function handleSubmitFormAddCard(evt) {
-    evt.preventDefault();
-
-    popupFormAddCard.showLoading();
-    const addNewCard = api.addCard(popupFormAddCard.formValues);
-    addNewCard
-      .then((card) => {
-        const cardElement = createCard(card);
-        cardList.addItem(cardElement);
-        popupFormAddCard.close();
-      })
-      .catch((err) => {
-        console.log(`Ошибка сервера ${err}`);
-      })
-      .finally(() => {
-        popupFormAddCard.hideLoading();
-      });
-  }
-  const popupFormAddCard = new PopupWithForm(
-    ".popup_image",
-    handleSubmitFormAddCard
-  );
-  popupFormAddCard.setEventListeners();
-  const buttonOpenPopupWithImage = document.querySelector(".profile__btn");
-  buttonOpenPopupWithImage.addEventListener("click", () => {
-    popupFormAddCard.open();
-  });
+  // Генерируем карточки
+  cardList.renderItems(initialCards);
 });
