@@ -201,23 +201,6 @@ buttonOpenPopupWithImage.addEventListener("click", () => {
 const getUserInfo = api.getUserInfo();
 const getInitialCards = api.getInitialCards();
 
-// getUserInfo.catch((msg) => {
-//   console.log(`Ошибка: ${msg}`);
-// });
-// getInitialCards.catch((msg) => {
-//   console.log(`Ошибка: ${msg}`);
-// });
-
-// const promiseAll = Promise.all([getUserInfo, getInitialCards]);
-// promiseAll.then(([arUserInfo, initialCards]) => {
-//   // Устанавливаем имя, полученное с сервера
-//   arCurrentUserProfile = arUserInfo;
-//   userInfo.setUserInfo(arCurrentUserProfile);
-
-//   // Генерируем карточки
-//   cardList.renderItems(initialCards);
-// });
-
 const promisAll = Promise.all([
   //в Promise.all передаем массив промисов которые нужно выполнить
   api.getUserInfo(),
