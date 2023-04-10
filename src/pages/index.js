@@ -152,10 +152,15 @@ function createCard(item) {
           result = api.likeCard(cardId);
         }
 
-        result.then((cardResult) => {
-          card.setLikeList(cardResult.likes);
-          card.like();
-        });
+        result
+          .then((cardResult) => {
+            // добавил после ревью, но еще не уверен, что правильно и работает
+            card.setLikeList(cardResult.likes);
+            card.like();
+          })
+          .catch((msg) => {
+            console.log(`Ошибка: ${msg}`);
+          });
       },
     }
   );
@@ -196,19 +201,37 @@ buttonOpenPopupWithImage.addEventListener("click", () => {
 const getUserInfo = api.getUserInfo();
 const getInitialCards = api.getInitialCards();
 
-getUserInfo.catch((msg) => {
-  console.log(`Ошибка: ${msg}`);
-});
-getInitialCards.catch((msg) => {
-  console.log(`Ошибка: ${msg}`);
-});
+// getUserInfo.catch((msg) => {
+//   console.log(`Ошибка: ${msg}`);
+// });
+// getInitialCards.catch((msg) => {
+//   console.log(`Ошибка: ${msg}`);
+// });
 
-const promiseAll = Promise.all([getUserInfo, getInitialCards]);
-promiseAll.then(([arUserInfo, initialCards]) => {
-  // Устанавливаем имя, полученное с сервера
-  arCurrentUserProfile = arUserInfo;
-  userInfo.setUserInfo(arCurrentUserProfile);
+// const promiseAll = Promise.all([getUserInfo, getInitialCards]);
+// promiseAll.then(([arUserInfo, initialCards]) => {
+//   // Устанавливаем имя, полученное с сервера
+//   arCurrentUserProfile = arUserInfo;
+//   userInfo.setUserInfo(arCurrentUserProfile);
 
-  // Генерируем карточки
-  cardList.renderItems(initialCards);
-});
+//   // Генерируем карточки
+//   cardList.renderItems(initialCards);
+// });
+
+const promisAll = Promise.all([
+  //в Promise.all передаем массив промисов которые нужно выполнить
+  api.getUserInfo(),
+  api.getInitialCards(),
+])
+  .then(([info, initialCards]) => {
+    //попадаем сюда, когда оба промиса будут выполнены, деструктурируем ответ
+    // Устанавливаем имя, полученное с сервера
+    arCurrentUserProfile = info;
+    userInfo.setUserInfo(arCurrentUserProfile);
+    // Генерируем карточки
+    cardList.renderItems(initialCards); //все данные получены, отрисовываем страницу
+  })
+  .catch((err) => {
+    //попадаем сюда если один из промисов завершится ошибкой
+    console.log(err);
+  });
